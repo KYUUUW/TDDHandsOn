@@ -1,6 +1,9 @@
-const faker = require("faker");
+const faker = require("faker"); // 임의의 문자열을 설정
 const sut = require("./index");
 
+/**
+ * 반복 코드를 줄여서 테스트 케이스를 작성하는 방법
+ */
 test.each`
   source                 | expected
   ${"hello  world"}      | ${"hello world"}
@@ -39,6 +42,7 @@ test.each`
   }
 );
 
+// 랜덤한 문자열 상황을 계속 만드는 방법
 describe("given banned word", () => {
   const bannedWord = faker.lorem.word();
   const masked = "*".repeat(bannedWord.length);
